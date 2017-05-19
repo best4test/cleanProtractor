@@ -21,7 +21,7 @@ jasmineNodeOpts: {
   defaultTimeoutInterval: 199993
 },
 onPrepare: function() {
-  var webRep = require('./libs/jasmine-webreporter.js');
+  var webRep = require('jasmine-web-reporter');
   browser.getProcessedConfig().then(function(config) {
       var browserName = config.capabilities.browserName;
       jasmine.getEnv().addReporter(new webRep.WebReporter({
