@@ -33,6 +33,13 @@ onPrepare: function() {
           "browserName" : config.capabilities.browserName
         }
       }));
+      jasmine.getEnv().addReporter(new webRep.WebReporter({
+          projectName:'All',
+          module:'AutoUpdateProduction',          
+          environment : 'Production',
+          slackUrl : 'https://hooks.slack.com/services/ASDF1234/ASDF1234/ABCDEFGHIJKLMNOPQRSTUVWXYZ',
+          channel : '#testChannel'
+      }));
   });
 
   require('./libs/core.js');
